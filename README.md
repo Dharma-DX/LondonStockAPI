@@ -108,3 +108,34 @@ The current MVP, especially with its default In-Memory database and synchronous 
 ### Proposed Architectural Enhancements for Scalability & Resilience:
 
 This outlines a more robust, distributed architecture capable of handling high throughput and providing low-latency price updates:
+
+To scale, we'd move from direct database interactions to an asynchronous, event-driven architecture. Trades would flow through a message queue for robust ingestion, with separate services for processing, real-time price aggregation, and fast lookups from a dedicated cache, ensuring high throughput and low latency.
+
+
+LondonStockApi/
+├── LondonStockApi.csproj
+├── Program.cs
+├── appsettings.json
+├── README.md
+├── .gitignore
+├── Controllers/
+│   ├── AuthController.cs  
+│   ├── StocksController.cs
+│   └── TradesController.cs
+├── Data/
+│   └── StockDbContext.cs
+├── Models/
+│   ├── DTOs/
+│   │   ├── StockValueViewModel.cs
+│   │   ├── TradeInputModel.cs
+│   │   ├── ErrorViewModel.cs
+│   │   ├── LoginModel.cs      
+│   │   └── TokenResponseModel.cs 
+│   └── Entities/
+│       └── Trade.cs
+├── Services/
+│   ├── IStockValuationService.cs
+│   ├── ITradeService.cs
+│   ├── StockValuationService.cs
+│   └── TradeService.cs
+└── Migrations/ (relevant if you switch to SQL Server)
