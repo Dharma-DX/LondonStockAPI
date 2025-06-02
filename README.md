@@ -112,30 +112,14 @@ This outlines a more robust, distributed architecture capable of handling high t
 To scale, we'd move from direct database interactions to an asynchronous, event-driven architecture. Trades would flow through a message queue for robust ingestion, with separate services for processing, real-time price aggregation, and fast lookups from a dedicated cache, ensuring high throughput and low latency.
 
 
-LondonStockApi/
-├── LondonStockApi.csproj
-├── Program.cs
-├── appsettings.json
-├── README.md
-├── .gitignore
-├── Controllers/
-│   ├── AuthController.cs  
-│   ├── StocksController.cs
-│   └── TradesController.cs
-├── Data/
-│   └── StockDbContext.cs
-├── Models/
-│   ├── DTOs/
-│   │   ├── StockValueViewModel.cs
-│   │   ├── TradeInputModel.cs
-│   │   ├── ErrorViewModel.cs
-│   │   ├── LoginModel.cs      
-│   │   └── TokenResponseModel.cs 
-│   └── Entities/
-│       └── Trade.cs
-├── Services/
-│   ├── IStockValuationService.cs
-│   ├── ITradeService.cs
-│   ├── StockValuationService.cs
-│   └── TradeService.cs
-└── Migrations/ (relevant if you switch to SQL Server)
+# LondonStockApi Structure
+
+![image](https://github.com/user-attachments/assets/1ead5ad9-7a37-443b-be34-54f5efa853d2)
+
+![Screenshot 2025-06-02 021140](https://github.com/user-attachments/assets/aac2ec7c-1597-4813-a43a-efa2cef37f50)
+
+![image](https://github.com/user-attachments/assets/7c1f9d0d-281c-4b11-bb73-1cc4b8f1444c)
+
+![image](https://github.com/user-attachments/assets/5733890f-b2ae-43ac-9bfb-6e135b621017)
+
+
